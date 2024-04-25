@@ -8,11 +8,11 @@ Add it to an existing Vue or React Project:
 
 ```bash
 # npm
-npm install @bridge/iframe
+npm install bridge-iframe
 # pnpm
-pnpm install @bridge/iframe
+pnpm install bridge-iframe
 # yarn
-yarn add @bridge/iframe
+yarn add bridge-iframe
 ```
 
 ## Network model
@@ -53,7 +53,7 @@ The following shows some commonly used methods
 ```
 
 ```javascript
-import { IFrameBridge } from '@bridge/iframe';
+import { IFrameBridge } from 'bridge-iframe';
 
 // Create bridge object
 const bridge = new IFrameBridge;
@@ -70,7 +70,7 @@ bridge.destroy();
 ```
 
 ```javascript
-import { IFrameBridge } from '@bridge/iframe';
+import { IFrameBridge } from 'bridge-iframe';
 
 // Create bridge object
 const bridge = new IFrameBridge({ name: 'Node1' });

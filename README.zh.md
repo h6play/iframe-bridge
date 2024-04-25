@@ -8,11 +8,11 @@
 
 ```bash
 # npm
-npm install @bridge/iframe
+npm install bridge-iframe
 # pnpm
-pnpm install @bridge/iframe
+pnpm install bridge-iframe
 # yarn
-yarn add @bridge/iframe
+yarn add bridge-iframe
 ```
 
 ## 网络模型
@@ -53,7 +53,7 @@ yarn add @bridge/iframe
 ```
 
 ```javascript
-import { IFrameBridge } from '@bridge/iframe';
+import { IFrameBridge } from 'bridge-iframe';
 
 // 创建桥接对象
 const bridge = new IFrameBridge;
@@ -70,7 +70,7 @@ bridge.destroy();
 ```
 
 ```javascript
-import { IFrameBridge } from '@bridge/iframe';
+import { IFrameBridge } from 'bridge-iframe';
 
 // 创建桥接对象
 const bridge = new IFrameBridge({ name: 'Node1' });

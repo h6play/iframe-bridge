@@ -1,5 +1,5 @@
 {
-  "name": "@bridge/iframe",
+  "name": "bridge-iframe",
   "description": "A bridge for iframe",
   "author": "h6play@163.com",
   "license": "MIT",
@@ -11,12 +11,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/h6play/iframe-bridge.git"
+    "url": "git+https://github.com/h6play/iframe-bridge.git"
   },
   "bugs": {
     "url": "https://github.com/h6play/iframe-bridge/issues"
   },
-  "private": true,
   "version": "1.0.0",
   "type": "module",
   "files": [
