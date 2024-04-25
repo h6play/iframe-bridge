@@ -4,7 +4,7 @@ Make communication between nested iframes as easy as computer networking.
 
 ## Quickstart
 
-Add it to an existing Vue Project:
+Add it to an existing Vue or React Project:
 
 ```bash
 # npm
@@ -20,7 +20,7 @@ yarn add @bridge/iframe
 ```bash
                          /——> (Children1)
 (Parent) <———> (Node) <—————> (Children2)
-                         \——> (ChildrenN ...)
+                         \——> (ChildrenN) ...
 ```
 
 - Each page is associated with a superior page and multiple direct subordinate pages.
@@ -114,7 +114,7 @@ bridge.off('say');
 ```javascript
 // Request a specific window
 bridge.request({
-    name: 'Node1', // Window name（Default is Main）
+    name: 'Node1', // Window name (Default is Main)
     method: 'say', // Method name
 }).then((message: string) => {
     console.log('say.then', message);
@@ -122,7 +122,7 @@ bridge.request({
     console.log('say.catch', error);
 });
 
-// Request parent window
+// Request parent window (Immediate superior at any level)
 bridge.request({
     name: 'Parent',
     method: 'say',
