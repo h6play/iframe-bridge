@@ -147,61 +147,61 @@ bridge.request({
             - `Main/Node2/Node2-2`
 
 - 向上请求 `Main/Node1/Node1-1` 到 `Main`
-    - `<Assuming the full path has been obtained>`
+    - `<内置协议获取地址>`
     - `Main/Node1/Node1-1` 请求 **↑↑↑** 到 `Main/Node1`
-        **tracks[`{Node1-1:U}`]**
+        - **tracks[`{Node1-1:U}`]**
     - `Main/Node1` 转发 **↑↑↑** 到 `Main`
-        **tracks[`{Node1-1:U}, {Node1:U}`]**
+        - **tracks[`{Node1-1:U}, {Node1:U}`]**
     - `Main` 处理逻辑
     - `Main` 响应 **↓↓↓** 到 `Main/Node1`
-        **tracks[`{Node1-1:U}`]**
+        - **tracks[`{Node1-1:U}`]**
     - `Main/Node1` 转发 **↓↓↓** 到 `Main/Node1/Node1-1`
-        **tracks[]**
+        - **tracks[]**
     - `Main/Node1/Node1-1` 收到响应
 
 - 向下请求 `Main` 到 `Main/Node1/Node1-1`
-    - `<Assuming the full path has been obtained>`
+    - `<内置协议获取地址>`
     - `Main` 请求 **↓↓↓** 到 `Main/Node1`
-        **tracks[`{Main:D}`]**
+        - **tracks[`{Main:D}`]**
     - `Main/Node1` 转发 **↓↓↓** 到 `Main/Node1/Node1-1`
-        **tracks[`{Main:D}, {Node1:D}`]**
+        - **tracks[`{Main:D}, {Node1:D}`]**
     - `Main/Node1/Node1-1` 处理逻辑
     - `Main/Node1/Node1-1` 响应 **↑↑↑** 到 `Main/Node1`
-        **tracks[`{Main:D}`]**
+        - **tracks[`{Main:D}`]**
     - `Main/Node1` 转发 **↑↑↑** 到 `Main`
-        **tracks[]**
+        - **tracks[]**
     - `Main` 收到响应
 
 - 同级请求 `Main/Node1/Node1-1` 到 `Main/Node1/Node1-2`
-    - `<Assuming the full path has been obtained>`
+    - `<内置协议获取地址>`
     - `Main/Node1/Node1-1` 请求 **↑↑↑** 到 `Main/Node1`
-        **tracks[`{Node1-1:U}`]**
+        - **tracks[`{Node1-1:U}`]**
     - `Main/Node1` 转发 **↓↓↓** 到 `Main/Node1/Node1-2`
-        **tracks[`{Node1-1:U}, {Node1:D}`]]**
+        - **tracks[`{Node1-1:U}, {Node1:D}`]]**
     - `Main/Node1/Node1-2` 处理逻辑
     - `Main/Node1/Node1-2` 响应 **↑↑↑** 到 `Main/Node1`
-        **tracks[`{Node1-1:U}`]**
+        - **tracks[`{Node1-1:U}`]**
     - `Main/Node1` 转发 **↓↓↓** 到 `Main/Node1/Node1-1`
-        **tracks[]**
+        - **tracks[]**
     - `Main/Node1/Node1-1` 收到响应
 
 - 跨级请求 `Main/Node1/Node1-1` 到 `Main/Node2/Node2-1`
-    - `<Assuming the full path has been obtained>`
+    - `<内置协议获取地址>`
     - `Main/Node1/Node1-1` 请求 **↑↑↑** 到 `Main/Node1`
-        **tracks[`{Node1-1:U}`]**
+        - **tracks[`{Node1-1:U}`]**
     - `Main/Node1` 转发 **↑↑↑** 到 `Main`
-        **tracks[`{Node1-1:U}, {Node1:U}`]**
+        - **tracks[`{Node1-1:U}, {Node1:U}`]**
     - `Main` 转发 **↓↓↓** 到 `Main/Node2`
-        **tracks[`{Node1-1:U}, {Node1:U}, {Main:D}`]**
+        - **tracks[`{Node1-1:U}, {Node1:U}, {Main:D}`]**
     - `Main/Node2` 转发 **↓↓↓** 到 `Main/Node2/Node2-1`
-        **tracks[`{Node1-1:U}, {Node1:U}, {Main:D}, {Node2:D}`]**
+        - **tracks[`{Node1-1:U}, {Node1:U}, {Main:D}, {Node2:D}`]**
     - `Main/Node2/Node2-1` 处理逻辑
     - `Main/Node2/Node2-1` 响应 **↑↑↑** 到 `Main/Node2`
-        **tracks[`{Node1-1:U}, {Node1:U}, {Main:D}`]**
+        - **tracks[`{Node1-1:U}, {Node1:U}, {Main:D}`]**
     - `Main/Node2` 转发 **↑↑↑** 到 `Main`
-        **tracks[`{Node1-1:U}, {Node1:U}`]**
+        - **tracks[`{Node1-1:U}, {Node1:U}`]**
     - `Main` 转发 **↓↓↓** 到 `Main/Node1`
-        **tracks[`{Node1-1:U}`]**
+        - **tracks[`{Node1-1:U}`]**
     - `Main/Node1` 转发 **↓↓↓** 到 `Main/Node1/Node1-1`
-        **tracks[]**
+        - **tracks[]**
     - `Main/Node1/Node1-1` 收到响应

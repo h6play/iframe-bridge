@@ -20,7 +20,7 @@ yarn add @bridge/iframe
 ```bash
                          /——> (Children1)
 (Parent) <———> (Node) <—————> (Children2)
-                         \——> (ChildrenN) ...
+                         \——> (More) ...
 ```
 
 - Each page is associated with a superior page and multiple direct subordinate pages.
@@ -147,61 +147,61 @@ bridge.request({
             - `Main/Node2/Node2-2`
 
 - Call the upper window interface `Main/Node1/Node1-1` to request `Main`
-    - `<Assuming the full path has been obtained>`
+    - `<Built-in protocol to obtain address>`
     - `Main/Node1/Node1-1` Request **↑↑↑** To `Main/Node1`
-        **tracks[`{Node1-1:U}`]**
+        - **tracks[`{Node1-1:U}`]**
     - `Main/Node1` Forward **↑↑↑** To `Main`
-        **tracks[`{Node1-1:U}, {Node1:U}`]**
+        - **tracks[`{Node1-1:U}, {Node1:U}`]**
     - `Main` Processing logic
     - `Main` Response **↓↓↓** To `Main/Node1`
-        **tracks[`{Node1-1:U}`]**
+        - **tracks[`{Node1-1:U}`]**
     - `Main/Node1` Forward **↓↓↓** To `Main/Node1/Node1-1`
-        **tracks[]**
+        - **tracks[]**
     - `Main/Node1/Node1-1` Response received
 
 - Call `Main` on the downward window interface and request to `Main/Node1/Node1-1`
-    - `<Assuming the full path has been obtained>`
+    - `<Built-in protocol to obtain address>`
     - `Main` Request **↓↓↓** To `Main/Node1`
-        **tracks[`{Main:D}`]**
+        - **tracks[`{Main:D}`]**
     - `Main/Node1` Forward **↓↓↓** To `Main/Node1/Node1-1`
-        **tracks[`{Main:D}, {Node1:D}`]**
+        - **tracks[`{Main:D}, {Node1:D}`]**
     - `Main/Node1/Node1-1` Processing logic
     - `Main/Node1/Node1-1` Response **↑↑↑** To `Main/Node1`
-        **tracks[`{Main:D}`]**
+        - **tracks[`{Main:D}`]**
     - `Main/Node1` Forward **↑↑↑** To `Main`
-        **tracks[]**
+        - **tracks[]**
     - `Main` Response received
 
 - The peer window interface calls `Main/Node1/Node1-1` and requests to `Main/Node1/Node1-2`
-    - `<Assuming the full path has been obtained>`
+    - `<Built-in protocol to obtain address>`
     - `Main/Node1/Node1-1` Request **↑↑↑** To `Main/Node1`
-        **tracks[`{Node1-1:U}`]**
+        - **tracks[`{Node1-1:U}`]**
     - `Main/Node1` Forward **↓↓↓** To `Main/Node1/Node1-2`
-        **tracks[`{Node1-1:U}, {Node1:D}`]]**
+        - **tracks[`{Node1-1:U}, {Node1:D}`]]**
     - `Main/Node1/Node1-2` Processing logic
     - `Main/Node1/Node1-2` Response **↑↑↑** To `Main/Node1`
-        **tracks[`{Node1-1:U}`]**
+        - **tracks[`{Node1-1:U}`]**
     - `Main/Node1` Forward **↓↓↓** To `Main/Node1/Node1-1`
-        **tracks[]**
+        - **tracks[]**
     - `Main/Node1/Node1-1` Response received
 
 - Cross-level window interface calls `Main/Node1/Node1-1` to request `Main/Node2/Node2-1`
-    - `<Assuming the full path has been obtained>`
+    - `<Built-in protocol to obtain address>`
     - `Main/Node1/Node1-1` Request **↑↑↑** To `Main/Node1`
-        **tracks[`{Node1-1:U}`]**
+        - **tracks[`{Node1-1:U}`]**
     - `Main/Node1` Forward **↑↑↑** To `Main`
-        **tracks[`{Node1-1:U}, {Node1:U}`]**
+        - **tracks[`{Node1-1:U}, {Node1:U}`]**
     - `Main` Forward **↓↓↓** To `Main/Node2`
-        **tracks[`{Node1-1:U}, {Node1:U}, {Main:D}`]**
+        - **tracks[`{Node1-1:U}, {Node1:U}, {Main:D}`]**
     - `Main/Node2` Forward **↓↓↓** To `Main/Node2/Node2-1`
-        **tracks[`{Node1-1:U}, {Node1:U}, {Main:D}, {Node2:D}`]**
+        - **tracks[`{Node1-1:U}, {Node1:U}, {Main:D}, {Node2:D}`]**
     - `Main/Node2/Node2-1` Processing logic
     - `Main/Node2/Node2-1` Response **↑↑↑** To `Main/Node2`
-        **tracks[`{Node1-1:U}, {Node1:U}, {Main:D}`]**
+        - **tracks[`{Node1-1:U}, {Node1:U}, {Main:D}`]**
     - `Main/Node2` Forward **↑↑↑** To `Main`
-        **tracks[`{Node1-1:U}, {Node1:U}`]**
+        - **tracks[`{Node1-1:U}, {Node1:U}`]**
     - `Main` Forward **↓↓↓** To `Main/Node1`
-        **tracks[`{Node1-1:U}`]**
+        - **tracks[`{Node1-1:U}`]**
     - `Main/Node1` Forward **↓↓↓** To `Main/Node1/Node1-1`
-        **tracks[]**
+        - **tracks[]**
     - `Main/Node1/Node1-1` Response received
